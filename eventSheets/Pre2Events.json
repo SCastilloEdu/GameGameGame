@@ -1,0 +1,697 @@
+{
+	"name": "Pre2Events",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Lose3",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Triggers lose event",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 532786322058914
+		},
+		{
+			"eventType": "variable",
+			"name": "Flags3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 548890235738942
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 574350706961978
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 377716511481427,
+					"parameters": {
+						"audio-file": "Start",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 532240085754684,
+					"parameters": {
+						"variable": "Lose",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 671428236182200,
+					"parameters": {
+						"variable": "Flags3",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 510650288143921,
+					"parameters": {
+						"group-name": "\"Celebrate2\"",
+						"state": "deactivated"
+					}
+				}
+			],
+			"sid": 454589904774162
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 754713027865141,
+					"parameters": {
+						"variable": "Lose"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 415708287356011
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "GREEN",
+					"sid": 714141439456683,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "BLUE",
+					"sid": 462010163650089,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "GREEN",
+					"sid": 520087274646314,
+					"parameters": {
+						"animation": "\"Animation 2\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "BLUE",
+					"sid": 800333193048858,
+					"parameters": {
+						"animation": "\"Animation 2\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 629439745150986,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"boom1\"",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"Explode\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 383735985325110,
+					"parameters": {
+						"seconds": "Audio.Duration(\"Explode\")"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 781800533248303
+				}
+			],
+			"sid": 610767083924839
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 534396035225145,
+					"parameters": {
+						"variable": "Flags3",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 156795563994494
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 877201226327437,
+					"parameters": {
+						"group-name": "\"Celebrate2\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 286967685148558,
+					"parameters": {
+						"audio-file": "Win",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"Win\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 325361674643717,
+					"parameters": {
+						"seconds": "Audio.Duration(\"Win\")"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 875083738316516,
+					"parameters": {
+						"layout": "Game1"
+					}
+				}
+			],
+			"sid": 141165282647527
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 811727542722788,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 368526592600240,
+					"parameters": {
+						"variable": "Lose",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 252995990317440
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 354667832095143,
+					"parameters": {
+						"variable": "Flags3",
+						"comparison": 4,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 722612718982576,
+					"parameters": {
+						"variable": "Flags3",
+						"comparison": 0,
+						"value": "2"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 810529133681413
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "GREEN",
+					"sid": 192340240599113,
+					"parameters": {
+						"animation": "\"Animation 3\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "BLUE",
+					"sid": 221672372262149,
+					"parameters": {
+						"animation": "\"Animation 3\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 479299769784860,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"boom2\"",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"NoWait\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 864997515650129,
+					"parameters": {
+						"seconds": "Audio.Duration(\"NoWait\") + 0.25"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 295075673947971,
+					"parameters": {
+						"variable": "Lose",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 747951215025303
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collision3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Spike",
+							"sid": 942328025036142,
+							"parameters": {
+								"object": "GREEN"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Spike",
+							"sid": 656841902981464,
+							"parameters": {
+								"object": "BLUE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 177832205836626,
+							"parameters": {
+								"variable": "Lose",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 239087134724312,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Flag",
+							"sid": 845706581205095,
+							"parameters": {
+								"object": "GREEN"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "GREEN",
+							"sid": 393337354469956
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Flag",
+							"sid": 162049487156996,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 972199845446064,
+							"parameters": {
+								"variable": "Flags3",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 463135787522672
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Flag",
+							"sid": 257506998451697,
+							"parameters": {
+								"object": "BLUE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "BLUE",
+							"sid": 887718070428566
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Flag",
+							"sid": 911749985531215,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 202236146846920,
+							"parameters": {
+								"variable": "Flags3",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 188524747954975
+				}
+			],
+			"sid": 395823192722954
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movement3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "MoveBuffer3",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "GREEN",
+							"sid": 515646652639093,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "BLUE",
+							"sid": 385494773229749,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						}
+					],
+					"sid": 838272029161442
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "GREEN",
+							"sid": 898838921576074,
+							"behaviorType": "TileMovement"
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "BLUE",
+							"sid": 366612607896755,
+							"behaviorType": "TileMovement"
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "MoveBuffer3",
+							"sid": 284052180823376
+						}
+					],
+					"sid": 179980068859929,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 266377417540514
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 227806945970741,
+									"parameters": {
+										"audio-file": "Walk",
+										"loop": "not-looping",
+										"volume": "-5",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 798826615251678
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "GREEN",
+							"sid": 355984930768443,
+							"behaviorType": "TileMovement",
+							"isInverted": true
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "BLUE",
+							"sid": 314529595254207,
+							"behaviorType": "TileMovement",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "GREEN",
+							"sid": 592676214561587,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "BLUE",
+							"sid": 982071322126192,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						}
+					],
+					"sid": 916623293219892
+				}
+			],
+			"sid": 221096987404439
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Celebrate2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 147448936819369,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "Flag",
+							"sid": 551455081465338,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Rock",
+							"sid": 986859573842113,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Spike",
+							"sid": 528350886584724,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "TiledBackground",
+							"sid": 731755266282343,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 300509296666873,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Flag",
+							"sid": 315572057173509,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Rock",
+							"sid": 742817604566747,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Spike",
+							"sid": 704429191387262,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "TiledBackground",
+							"sid": 922989215323973,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 611797426889267,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						}
+					],
+					"sid": 998300455486243
+				}
+			],
+			"sid": 961886594990225
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cutscenes2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 615213391792832
+		}
+	],
+	"sid": 882393866765500
+}

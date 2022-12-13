@@ -1,0 +1,372 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 31702,
+	"name": "GameGameGame",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "TileMovement",
+			"name": "Tile movement",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "eaeri5zru2v",
+	"objectTypes": {
+		"items": [
+			"TitleA",
+			"TitleB",
+			"TitleC",
+			"Press",
+			"Keyboard",
+			"GO",
+			"TiledBackground",
+			"Audio"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"BLUE",
+					"GREEN",
+					"RED"
+				],
+				"subfolders": [],
+				"name": "Player"
+			},
+			{
+				"items": [
+					"Flag",
+					"Rock",
+					"Spike"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"KeyR",
+							"KeyG",
+							"KeyB",
+							"DooB",
+							"DooG",
+							"DooR"
+						],
+						"subfolders": [],
+						"name": "Keys"
+					}
+				],
+				"name": "Object"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Pre1",
+			"Pre2",
+			"Game1",
+			"Game2",
+			"StartScreen",
+			"Game3"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"StartScreenEvents",
+			"GameEvents",
+			"Pre1Events",
+			"Pre2Events"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "boom5.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 831079706418332,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 578119805347101,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Start.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 292937092044084,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Win.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 963066658755044,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "boom4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 795664284612526,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "boom1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 554762759105582,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "boom2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 361346081183650,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "boom3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 928522948417369,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Walk.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 847866326046341,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "JOYSTIX.TTF",
+					"type": "application/font-sfnt",
+					"sid": 418959645362816,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 761984971565388,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 127495878546176,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 680497147693248,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 992499125096049,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 535671010843683,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 357080850037549,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 861813889657503,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": true,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			0,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "default",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "percent",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "folders"
+	},
+	"viewportWidth": 900,
+	"viewportHeight": 600,
+	"firstLayout": "StartScreen"
+}

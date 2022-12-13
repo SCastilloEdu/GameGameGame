@@ -1,0 +1,343 @@
+{
+	"name": "StartScreenEvents",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 576465149378463
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 977260082914554,
+					"parameters": {
+						"group-name": "\"Group1\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 956748614633104,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "TitleA",
+					"sid": 171825595368468,
+					"parameters": {
+						"color": "rgbEx(255, 255, 255)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 796428108807461,
+					"parameters": {
+						"audio-file": "Sound",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 591494752292024,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "TitleB",
+					"sid": 636102213344708,
+					"parameters": {
+						"color": "rgbEx(255, 255, 255)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 731412106695763,
+					"parameters": {
+						"audio-file": "Sound",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 305472097320066,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "TitleC",
+					"sid": 806638033803167,
+					"parameters": {
+						"color": "rgbEx(255, 255, 255)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 299484825330987,
+					"parameters": {
+						"audio-file": "Sound",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 365869416031493,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 365408441619808,
+					"parameters": {
+						"audio-file": "Sound",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				},
+				{
+					"id": "add-ring-mod-effect",
+					"objectClass": "Audio",
+					"sid": 388284598231727,
+					"parameters": {
+						"tag": "\"sound\"",
+						"frequency": "10",
+						"mix": "200"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 597705575270929,
+					"parameters": {
+						"group-name": "\"Group1\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 525792497852464
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Group1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 413442201941706
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 145616999941758
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Press",
+							"sid": 733619477229744
+						},
+						{
+							"id": "destroy",
+							"objectClass": "TitleA",
+							"sid": 859497406649559
+						},
+						{
+							"id": "destroy",
+							"objectClass": "TitleB",
+							"sid": 278113023855475
+						},
+						{
+							"id": "destroy",
+							"objectClass": "TitleC",
+							"sid": 897318371736788
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "GO",
+							"sid": 124337716723326,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 654958964410276,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 678380657735536,
+							"parameters": {
+								"layout": "Pre1"
+							}
+						}
+					],
+					"sid": 223150386654850
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 727645059152450,
+							"parameters": {
+								"interval-seconds": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleA",
+							"sid": 803444975315673,
+							"parameters": {
+								"color": "rgbEx(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleB",
+							"sid": 893990948966487,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleC",
+							"sid": 831245500843464,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 779290351019879,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleA",
+							"sid": 465583421352900,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleB",
+							"sid": 359250656945115,
+							"parameters": {
+								"color": "rgbEx(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleC",
+							"sid": 228321332499744,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Press",
+							"sid": 342750796019624,
+							"parameters": {
+								"color": "rgbEx(255, 255, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 388136154946394,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleA",
+							"sid": 825391408587542,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleB",
+							"sid": 928872629626739,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "TitleC",
+							"sid": 567739984815747,
+							"parameters": {
+								"color": "rgbEx(255, 0, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 915515823592254,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						}
+					],
+					"sid": 789017845158944
+				}
+			],
+			"sid": 277220647960694
+		}
+	],
+	"sid": 527878676350959
+}

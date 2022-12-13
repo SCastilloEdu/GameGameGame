@@ -1,0 +1,55 @@
+{
+	"name": "KeyG",
+	"plugin-id": "Sprite",
+	"sid": 800404823198708,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 383229548528431
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 15,
+						"height": 15,
+						"originX": 0.5,
+						"originY": 0.5333333333333333,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8256110,
+						"collisionPoly": {
+							"points": [
+								0.0006666666666666666,
+								0.0006666666666666666,
+								0.9993333333333333,
+								0.0006666666666666666,
+								0.9993333333333333,
+								0.9993333333333333,
+								0.0006666666666666666,
+								0.9993333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 913554578483989,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

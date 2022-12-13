@@ -1,0 +1,387 @@
+{
+	"name": "Pre1Events",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Lose2",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Triggers lose event",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 833003555174092
+		},
+		{
+			"eventType": "variable",
+			"name": "Flags2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 920698795212300
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 978888000893540
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 683895821727401,
+					"parameters": {
+						"audio-file": "Start",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 862051058148564,
+					"parameters": {
+						"variable": "Lose",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 212774279109770,
+					"parameters": {
+						"variable": "Flags2",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 521891056289163
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 239710950649382,
+					"parameters": {
+						"variable": "Lose"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 817194106126525
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "BLUE",
+					"sid": 798877995778741,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "BLUE",
+					"sid": 235609506259395,
+					"parameters": {
+						"animation": "\"Animation 2\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 464100620498829,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"boom1\"",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"Explode\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 580761664897368,
+					"parameters": {
+						"seconds": "Audio.Duration(\"Explode\")"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 659552041665017
+				}
+			],
+			"sid": 919648560225785
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 878077132637483,
+					"parameters": {
+						"variable": "Flags2",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 869103352311338
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 680211613714802,
+					"parameters": {
+						"audio-file": "Win",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"Win\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 836062631539405,
+					"parameters": {
+						"seconds": "Audio.Duration(\"Win\")"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 668449592332664,
+					"parameters": {
+						"layout": "Pre2"
+					}
+				}
+			],
+			"sid": 273341056992700
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 607139551356912,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 168740723720992,
+					"parameters": {
+						"variable": "Lose",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 756024201223672
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collision2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Spike",
+							"sid": 319821024492568,
+							"parameters": {
+								"object": "BLUE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 830922292524369,
+							"parameters": {
+								"variable": "Lose",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 193181645818509,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Flag",
+							"sid": 431240668053678,
+							"parameters": {
+								"object": "BLUE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "BLUE",
+							"sid": 532098514470322
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Flag",
+							"sid": 480257211532758,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 715076348486239,
+							"parameters": {
+								"variable": "Flags2",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 842866674561889
+				}
+			],
+			"sid": 294609082084489
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movement2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "MoveBuffer2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "BLUE",
+							"sid": 859565685084795,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						}
+					],
+					"sid": 824870452974518
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "BLUE",
+							"sid": 147343248579958,
+							"behaviorType": "TileMovement"
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "MoveBuffer",
+							"sid": 962329842029713
+						}
+					],
+					"sid": 390897648617811,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 158889334795968
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 792896220401050,
+									"parameters": {
+										"audio-file": "Walk",
+										"loop": "not-looping",
+										"volume": "-5",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 662614277963157
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "BLUE",
+							"sid": 786198908154584,
+							"behaviorType": "TileMovement",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "BLUE",
+							"sid": 588472569942049,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						}
+					],
+					"sid": 815031437130208
+				}
+			],
+			"sid": 987605959284467
+		}
+	],
+	"sid": 583258602176185
+}
